@@ -5,7 +5,7 @@ import (
 	"sync"
 
 	"github.com/gin-gonic/gin"
-	"github.com/go-oauth2/oauth2/v4"
+	"github.com/go-oauth2/oauth2/v4/manage"
 	"github.com/go-oauth2/oauth2/v4/server"
 )
 
@@ -15,7 +15,7 @@ var (
 )
 
 // InitServer Initialize the service
-func InitServer(manager oauth2.Manager) *server.Server {
+func InitServer(manager *manage.Manager) *server.Server {
 	once.Do(func() {
 		gServer = server.NewDefaultServer(manager)
 	})
